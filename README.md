@@ -1,216 +1,50 @@
-# 📘 3-Month Flutter Course
+# 📘 3-Month Flutter Course (Syllabus Only)
 
-> A structured, easy-to-follow learning path to master **Flutter + Dart** in just 3 months.
-
----
-
-## 📅 MONTH 1 — Dart + Core Flutter + UI Basics
-
-<details>
-<summary>✅ WEEK 1 — Dart Basics</summary>
-
-### Topics Covered
-- Variables  
-- Data Types  
-- Functions  
-- Null Safety  
-- Classes  
-- Async / Await  
-- Collections  
-
-### Mini Project
-- CLI Calculator **or** List App
-
-</details>
+This page contains **only the syllabus structure**.  
+Click any week to start learning.
 
 ---
 
-<details>
-<summary>✅ WEEK 2 — Flutter Basics</summary>
+## ⚙️ Setup & Requirements
 
-### Topics Covered
-- Stateless Widgets  
-- Stateful Widgets  
-- Scaffold  
-- AppBar  
-- MaterialApp  
-- Text  
-- Image  
-- Icon  
-- Button  
-
-### Mini UI Task
-- Login + Dashboard
-
-</details>
+- [Flutter Installation Guide](setup/flutter-install.md)
+- [VS Code Setup](setup/vscode-setup.md)
+- [Git & GitHub Setup](setup/git-setup.md)
 
 ---
 
-<details>
-<summary>✅ WEEK 3 — Layouts & Inputs</summary>
+## 📅 MONTH 1 — Dart + Core Flutter
 
-### Topics Covered
-- Row  
-- Column  
-- Stack  
-- Container  
-- Padding  
-- ListView  
-- Forms  
-- TextField  
-- Validation  
-
-### Mini Project
-- Signup UI + List UI
-
-</details>
+- ✅ [WEEK 1 — Dart Basics](month-1/week-1-dart/README.md)
+- ✅ [WEEK 2 — Flutter Basics](month-1/week-2-flutter/README.md)
+- ✅ [WEEK 3 — Layouts & Inputs](month-1/week-3-layouts/README.md)
+- ✅ [WEEK 4 — Navigation & UI](month-1/week-4-navigation/README.md)
 
 ---
 
-<details>
-<summary>✅ WEEK 4 — Navigation & Reusable UI</summary>
+## 📅 MONTH 2 — State, Storage, Architecture
 
-### Topics Covered
-- Navigator.push / pop  
-- Bottom Navigation Bar  
-- Dialogs  
-- Bottom Sheets  
-- Basic Animations  
-
-### Mini Project
-- 3–4 Screen App
-
-</details>
+- ✅ [WEEK 5 — Provider State Management](month-2/week-5-provider/README.md)
+- ✅ [WEEK 6 — Local Storage](month-2/week-6-storage/README.md)
+- ✅ [WEEK 7 — Feature First Architecture](month-2/week-7-architecture/README.md)
+- ✅ [WEEK 8 — GoRouter Routing](month-2/week-8-routing/README.md)
 
 ---
 
-## 📅 MONTH 2 — State, Local Storage, Architecture
+## 📅 MONTH 3 — Backend & Final Project
 
-<details>
-<summary>✅ WEEK 5 — Provider State Management</summary>
-
-### Topics Covered
-- ChangeNotifier  
-- read / watch  
-- Global State  
-- Rebuild Patterns  
-
-### Mini Project
-- Todo App
-
-</details>
+- ✅ [WEEK 9 — Firebase / Supabase](month-3/week-9-backend/README.md)
+- ✅ [WEEK 10 — UI/UX Polishing](month-3/week-10-ui/README.md)
+- 🚀 [WEEK 11–12 — Final Ecommerce Project](month-3/final-project/README.md)
 
 ---
 
-<details>
-<summary>✅ WEEK 6 — SharedPreferences</summary>
+## 🎯 Goal of this Course
 
-### Topics Covered
-- Store Token  
-- Theme Storage  
-- Small JSON Storage  
-- Caching  
+By the end of this course, students will be able to:
 
-### Mini Project
-- Notes App
-
-</details>
-
----
-
-<details>
-<summary>✅ WEEK 7 — Feature-First Architecture</summary>
-
-### Topics Covered
-- core/  
-- common/  
-- features/  
-
-### Mini Project
-- Refactor Previous Apps
-
-</details>
-
----
-
-<details>
-<summary>✅ WEEK 8 — GoRouter (Basic)</summary>
-
-### Topics Covered
-- Basic Routes  
-- Parameters  
-- Simple Redirect  
-
-### Mini Project
-- 4–5 Screen App
-
-</details>
-
----
-
-## 📅 MONTH 3 — Backend + Animations + Final Project
-
-<details>
-<summary>✅ WEEK 9 — Firebase / Supabase</summary>
-
-### Topics Covered
-- Authentication  
-- CRUD Operations  
-- Upload Picture  
-- Fetch List  
-
-### Mini Project
-- Login + Profile CRUD
-
-</details>
-
----
-
-<details>
-<summary>✅ WEEK 10 — UI/UX Polishing</summary>
-
-### Topics Covered
-- Theme  
-- Simple Animations  
-- Spacing  
-- Typography  
-
-### Mini Project
-- Simple Animated Onboarding
-
-</details>
-
----
-
-<details>
-<summary>✅ WEEK 11–12 — Final Project (Mini Ecommerce)</summary>
-
-### Features
-- Authentication  
-- Product List  
-- Product Details  
-- Cart  
-- Orders  
-- Profile  
-- Local Storage  
-- Basic Animations  
-
-</details>
-
----
-
-## 🎯 Outcome
-
-After 3 months, you will be able to:
-
-- Build professional Flutter apps  
-- Use state management  
-- Implement authentication and database  
-- Design beautiful UI/UX  
-- Follow clean architecture  
-
----
-
-## 🚀 Ready to Start Learning Flutter
-
-Clone this repo, follow the weekly plan, and start building today.
+- Build real Flutter applications
+- Use state management
+- Connect apps to database & authentication
+- Apply clean architecture
+- Create production-ready UI
