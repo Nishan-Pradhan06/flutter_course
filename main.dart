@@ -1,14 +1,18 @@
 void main() {
-  print("dart programming");
+  // List -->array
 
-  // dynamic name = 1;
+  List<String> name = ["1", "2", "3", "ffsd"];
 
-  // final name = "nishan";
+  List n = [1, 2, 3];
 
-  // name = "";
-}
+  final reversed = n.reversed;
 
-class User {
-  String name;
-  User(this.name);
+  print(reversed);
+  name[0];
+  print("${name[2]}");
+
+  name.add("value");
+  name.addAll(["iterable", ""]);
+
+  
 }

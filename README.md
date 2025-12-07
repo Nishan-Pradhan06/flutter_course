@@ -3,6 +3,43 @@
 This page contains **only the syllabus structure**.  
 Click any week to start learning.
 
+List list = ["hello", 1, 4]; //dynamic by default
+  // List<String> names = ["Nishan", "how"];
+
+  // names.add("new");
+  // names.add("babe"); //add one data
+  // names.addAll(["mishan", "session"]); //multiple data insertion
+
+  // names.remove("hello"); //remove data
+  // names.removeAt(1); //remove using index
+  // names.removeLast(); //it remove from the last
+  // // names.clear(); //remove all data
+
+  // //other important methods
+  // names
+  //     .length; //calucate the total length inside list simple it counts the items inside the list
+  // names.contains("hey"); //check where items is in list or not
+
+  // print(names.reversed.toList()); // it reverse the list
+
+  // print(names);
+
+  // //mapss
+
+  // Map<String, int> scores = {"Alice": 90, "Bob": 80};
+
+  // Map<int, String> idNames = {1: "Nishan", 2: "Riya"};
+
+  // idNames[1] = "he";
+  // idNames[5] = "next";
+
+  // idNames.remove(2);
+
+  // print(scores);
+  // print(scores.keys);
+  // print(scores.values);
+  // print(idNames);
+
 ---
 
 ## ⚙️ Setup & Requirements
