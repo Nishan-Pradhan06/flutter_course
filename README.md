@@ -3,26 +3,6 @@
 This page contains **only the syllabus structure**.  
 Click any week to start learning.
 
-List list = ["hello", 1, 4]; //dynamic by default
-  // List<String> names = ["Nishan", "how"];
-
-  // names.add("new");
-  // names.add("babe"); //add one data
-  // names.addAll(["mishan", "session"]); //multiple data insertion
-
-  // names.remove("hello"); //remove data
-  // names.removeAt(1); //remove using index
-  // names.removeLast(); //it remove from the last
-  // // names.clear(); //remove all data
-
-  // //other important methods
-  // names
-  //     .length; //calucate the total length inside list simple it counts the items inside the list
-  // names.contains("hey"); //check where items is in list or not
-
-  // print(names.reversed.toList()); // it reverse the list
-
-  // print(names);
 
   // //mapss
 
