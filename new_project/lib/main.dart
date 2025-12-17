@@ -10,31 +10,42 @@ class Bit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //material app is a root app
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        //refernce web
-        // header --> appbar
-        appBar: AppBar(
-          backgroundColor: Colors.red,
-          leading: Icon(Icons.menu, color: Colors.white),
-          centerTitle: true,
-          title: Text(
-            'Discover',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-          ),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Ne7oVV6Lx9uAnmJDUZrrLcGy8yzo1sXdpQ&s",
-                ),
+    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
+  }
+}
+
+//    stl --> stateless widget
+//    stf --> statefull widget
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //refernce web
+      // header --> appbar
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        leading: Icon(Icons.menu, color: Colors.white),
+        centerTitle: true,
+        title: Text(
+          'Discover',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundImage: NetworkImage(
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-Ne7oVV6Lx9uAnmJDUZrrLcGy8yzo1sXdpQ&s",
               ),
             ),
-          ],
-        ),
-        body: Padding(
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,6 +56,28 @@ class Bit extends StatelessWidget {
               Container(height: 100, width: 100, color: Colors.green),
               // SizedBox(height: 100),
               Container(height: 100, width: 100, color: Colors.yellow),
+              Container(height: 100, width: 100, color: Colors.yellow),
+              Container(height: 100, width: 100, color: Colors.yellow),
+              Container(height: 100, width: 100, color: Colors.yellow),
+              Container(height: 100, width: 100, color: Colors.yellow),
+              Container(
+                height: 100,
+                width: 100,
+
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+              ),
+              Container(
+                height: 100,
+                width: 100,
+
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.yellow,
+                ),
+              ),
 
               Image.asset("assets/img.png", height: 200),
 
@@ -82,8 +115,3 @@ class Bit extends StatelessWidget {
     );
   }
 }
-
-
-
-//    stl --> stateless widget
-//    stf --> statefull widget
