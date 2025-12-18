@@ -17,8 +17,26 @@ class Bit extends StatelessWidget {
 //    stl --> stateless widget
 //    stf --> statefull widget
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  // Boolean variable to control shape change
+  // false → shape will be circle
+  // true → shape will be rectangle
+  bool isChangedShape = false;
+
+  // Variable to store number of shapes
+  // Starts with 1 shape
+  int count = 1;
+
+  // Variable to store number value
+  // Used for displaying text multiple times
+  int numer = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -47,46 +65,108 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
+
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             spacing: 10,
             children: [
-              Container(height: 100, width: 100, color: Colors.red),
-              // SizedBox(height: 10),
-              Container(height: 100, width: 100, color: Colors.green),
               // SizedBox(height: 100),
-              Container(height: 100, width: 100, color: Colors.yellow),
-              Container(height: 100, width: 100, color: Colors.yellow),
-              Container(height: 100, width: 100, color: Colors.yellow),
-              Container(height: 100, width: 100, color: Colors.yellow),
-              Container(height: 100, width: 100, color: Colors.yellow),
-              Container(
-                height: 100,
-                width: 100,
+              // Container(
+              //   height: 100,
+              //   width: 100,
 
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
+              //   decoration: BoxDecoration(
+              //     color: Colors.green,
+              //     borderRadius: BorderRadius.all(Radius.circular(10)),
+              //   ),
+              // ),
+              // SingleChildScrollView allows scrolling
+              // Here it is used for horizontal scrolling
+              SingleChildScrollView(
+                // Scroll direction is set to horizontal
+                scrollDirection: Axis.horizontal,
+
+                child: Row(
+                  // Space between each container
+                  spacing: 10,
+
+                  children: [
+                    // Loop to create multiple containers
+                    // Number of containers depends on 'count'
+                    for (int i = 0; i < count; i++)
+                      Container(
+                        // Height of each shape
+                        height: 100,
+
+                        // Width of each shape
+                        width: 100,
+
+                        decoration: BoxDecoration(
+                          // Change shape based on isChangedShape value
+                          // If true → rectangle
+                          // If false → circle
+                          shape: isChangedShape
+                              ? BoxShape.rectangle
+                              : BoxShape.circle,
+
+                          // Color of the shape
+                          color: Colors.yellow,
+                        ),
+                      ),
+                  ],
                 ),
               ),
-              Container(
-                height: 100,
-                width: 100,
 
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.yellow,
-                ),
-              ),
-
-              Image.asset("assets/img.png", height: 200),
+              // Image.asset("assets/img.png", height: 200),
 
               //for text
               Text("fsdf"),
               Icon(Icons.add),
-              ElevatedButton(onPressed: () {}, child: Text("login")),
-              OutlinedButton(onPressed: () {}, child: Text("Outline")),
-              TextButton(onPressed: () {}, child: Text("Text button")),
+              // Button with background color (Elevated button)
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    // Change the value of isChangedShape
+                    // If it is true, make it false
+                    // If it is false, make it true
+                    isChangedShape = !isChangedShape;
+                  });
+                },
+                // Text shown on the button
+                child: Text("Change Shape"),
+              ),
+
+              // Loop to show text multiple times
+              // It will display the value of 'numer' as text
+              // The text will repeat 'numer' times
+              for (int i = 0; i < numer; i++) Text(numer.toString()),
+
+              // Button with border only (Outlined button)
+              OutlinedButton(
+                onPressed: () {
+                  setState(() {
+                    // Increase the count value by 1
+                    // Used to add more shapes
+                    count++;
+                  });
+                },
+                // Text shown on the button
+                child: Text("Add Shape"),
+              ),
+
+              // Simple text button (no background or border)
+              TextButton(
+                onPressed: () {
+                  setState(() {
+                    // Increase the numer value by 1
+                    // This will increase the number of texts shown
+                    numer++;
+                  });
+                },
+                // Text shown on the button
+                child: Text("Text button"),
+              ),
+
               // Row(
               //   spacing: 10,
               //   children: [
@@ -115,3 +195,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+// ? :
