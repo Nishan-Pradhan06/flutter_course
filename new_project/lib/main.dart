@@ -70,6 +70,44 @@ class _HomePageState extends State<HomePage> {
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             spacing: 10,
             children: [
+              Row(
+                spacing: 10,
+                children: [
+                  Text('Popular'),
+                  //for Spacing one is   ##sizebox and another is spacing provided in row widget
+                  Text('Featured'),
+                  // SizedBox(width: 10),
+                  Text('Most Visited'),
+                  Text('Europe'),
+                  Text('Asia'),
+                  Text('Popular'),
+                ],
+              ),
+
+              Container(
+                height: 200,
+                width: 300,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/travel.jpg"),
+                    fit: BoxFit.cover,
+                  ),
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    height: 80,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.black.withValues(alpha: 0.3),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+              ),
+
               // SizedBox(height: 100),
               // Container(
               //   height: 100,
@@ -82,103 +120,89 @@ class _HomePageState extends State<HomePage> {
               // ),
               // SingleChildScrollView allows scrolling
               // Here it is used for horizontal scrolling
-              SingleChildScrollView(
-                // Scroll direction is set to horizontal
-                scrollDirection: Axis.horizontal,
+              // SingleChildScrollView(
+              //   // Scroll direction is set to horizontal
+              //   scrollDirection: Axis.horizontal,
 
-                child: Row(
-                  // Space between each container
-                  spacing: 10,
+              //   child: Row(
+              //     // Space between each container
+              //     spacing: 10,
 
-                  children: [
-                    // Loop to create multiple containers
-                    // Number of containers depends on 'count'
-                    for (int i = 0; i < count; i++)
-                      Container(
-                        // Height of each shape
-                        height: 100,
+              //     children: [
+              //       // Loop to create multiple containers
+              //       // Number of containers depends on 'count'
+              //       for (int i = 0; i < count; i++)
+              //         Container(
+              //           // Height of each shape
+              //           height: 100,
 
-                        // Width of each shape
-                        width: 100,
+              //           // Width of each shape
+              //           width: 100,
 
-                        decoration: BoxDecoration(
-                          // Change shape based on isChangedShape value
-                          // If true → rectangle
-                          // If false → circle
-                          shape: isChangedShape
-                              ? BoxShape.rectangle
-                              : BoxShape.circle,
+              //           decoration: BoxDecoration(
+              //             // Change shape based on isChangedShape value
+              //             // If true → rectangle
+              //             // If false → circle
+              //             shape: isChangedShape
+              //                 ? BoxShape.rectangle
+              //                 : BoxShape.circle,
 
-                          // Color of the shape
-                          color: Colors.yellow,
-                        ),
-                      ),
-                  ],
-                ),
-              ),
+              //             // Color of the shape
+              //             color: Colors.yellow,
+              //           ),
+              //         ),
+              //     ],
+              //   ),
+              // ),
 
-              // Image.asset("assets/img.png", height: 200),
+              // // Image.asset("assets/img.png", height: 200),
 
-              //for text
-              Text("fsdf"),
-              Icon(Icons.add),
-              // Button with background color (Elevated button)
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    // Change the value of isChangedShape
-                    // If it is true, make it false
-                    // If it is false, make it true
-                    isChangedShape = !isChangedShape;
-                  });
-                },
-                // Text shown on the button
-                child: Text("Change Shape"),
-              ),
+              // //for text
+              // Text("fsdf"),
+              // Icon(Icons.add),
+              // // Button with background color (Elevated button)
+              // ElevatedButton(
+              //   onPressed: () {
+              //     setState(() {
+              //       // Change the value of isChangedShape
+              //       // If it is true, make it false
+              //       // If it is false, make it true
+              //       isChangedShape = !isChangedShape;
+              //     });
+              //   },
+              //   // Text shown on the button
+              //   child: Text("Change Shape"),
+              // ),
 
-              // Loop to show text multiple times
-              // It will display the value of 'numer' as text
-              // The text will repeat 'numer' times
-              for (int i = 0; i < numer; i++) Text(numer.toString()),
+              // // Loop to show text multiple times
+              // // It will display the value of 'numer' as text
+              // // The text will repeat 'numer' times
+              // for (int i = 0; i < numer; i++) Text(numer.toString()),
 
-              // Button with border only (Outlined button)
-              OutlinedButton(
-                onPressed: () {
-                  setState(() {
-                    // Increase the count value by 1
-                    // Used to add more shapes
-                    count++;
-                  });
-                },
-                // Text shown on the button
-                child: Text("Add Shape"),
-              ),
+              // // Button with border only (Outlined button)
+              // OutlinedButton(
+              //   onPressed: () {
+              //     setState(() {
+              //       // Increase the count value by 1
+              //       // Used to add more shapes
+              //       count++;
+              //     });
+              //   },
+              //   // Text shown on the button
+              //   child: Text("Add Shape"),
+              // ),
 
-              // Simple text button (no background or border)
-              TextButton(
-                onPressed: () {
-                  setState(() {
-                    // Increase the numer value by 1
-                    // This will increase the number of texts shown
-                    numer++;
-                  });
-                },
-                // Text shown on the button
-                child: Text("Text button"),
-              ),
-
-              // Row(
-              //   spacing: 10,
-              //   children: [
-              //     Text('Popular'),
-              //     //for Spacing one is   ##sizebox and another is spacing provided in row widget
-              //     Text('Featured'),
-              //     // SizedBox(width: 10),
-              //     Text('Most Visited'),
-              //     Text('Europe'),
-              //     Text('Asia'),
-              //     Text('Popular'),
-              //   ],
+              // // Simple text button (no background or border)
+              // TextButton(
+              //   onPressed: () {
+              //     setState(() {
+              //       // Increase the numer value by 1
+              //       // This will increase the number of texts shown
+              //       numer++;
+              //     });
+              //   },
+              //   // Text shown on the button
+              //   child: Text("Text button"),
               // ),
 
               //Container, Column /Row, Basic UI Widgets: Text, Image, Icon, SizedBox, Padding, Button (Elevated,Text, Outline)
@@ -188,6 +212,10 @@ class _HomePageState extends State<HomePage> {
 
               //   ],
               // ),
+
+              //reuseable
+              //grid widget
+              //list widget
             ],
           ),
         ),
