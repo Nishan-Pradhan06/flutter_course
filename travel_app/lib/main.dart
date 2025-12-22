@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:new_project/arina.dart';
+import 'package:new_project/malina.dart';
+import 'package:new_project/nishant.dart';
+import 'package:new_project/rahul.dart';
 
 void main() {
   runApp(Bit());
@@ -103,6 +107,24 @@ class _HomePageState extends State<HomePage> {
                     decoration: BoxDecoration(
                       color: Colors.black.withValues(alpha: 0.3),
                       borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              'Northern Mountain',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              ),
+                            ),
+                            
+                          ],
+                        ),
+                        Row(),
+                      ],
                     ),
                   ),
                 ),
