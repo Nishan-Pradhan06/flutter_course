@@ -73,7 +73,7 @@ class Rahul extends StatelessWidget {
           ),
           Text("Product Designer"),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment:.center,
             children: [
               FaIcon(FontAwesomeIcons.facebook),
               SizedBox(width: 12),
