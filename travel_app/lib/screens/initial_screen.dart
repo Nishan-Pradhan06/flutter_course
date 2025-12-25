@@ -16,7 +16,7 @@ class InitialScreen extends StatelessWidget {
                 context,
               ).push(MaterialPageRoute(builder: (context) => HomePage()));
             },
-            child: Text('data'),
+            child: Text('data'), //replace with your widgetgi
           ),
         ],
       ),
