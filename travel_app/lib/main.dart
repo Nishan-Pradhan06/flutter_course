@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/arina.dart';
-import 'package:new_project/malina.dart';
-import 'package:new_project/nishant.dart';
-import 'package:new_project/rahul.dart';
 import 'package:new_project/screens/initial_screen.dart';
 
 void main() {
@@ -21,7 +17,3 @@ class Bit extends StatelessWidget {
     );
   }
 }
-
-//    stl --> stateless widget
-//    stf --> statefull widget
-
