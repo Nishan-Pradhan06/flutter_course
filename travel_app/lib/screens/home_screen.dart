@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_project/screens/next_page.dart';
+import 'package:new_project/widgets/custom_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,6 +25,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       //refernce web
       // header --> appbar
@@ -69,12 +71,29 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
 
-              ElevatedButton(
+              Text(height.toString()),
+              CustomButton(
+                text: 'Bit',
+
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return NextPage();
+                      },
+                    ),
+                  );
+                },
+              ),
+              CustomButton(
+                text: 'NIshan',
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text('Explore Now'),
               ),
+              CustomButton(text: 'Class'),
+
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
