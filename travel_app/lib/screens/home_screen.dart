@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_project/screens/next_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -28,7 +29,8 @@ class _HomePageState extends State<HomePage> {
       // header --> appbar
       appBar: AppBar(
         backgroundColor: Colors.red,
-        leading: Icon(Icons.menu, color: Colors.white),
+
+        // leading: Icon(Icons.menu, color: Colors.white),
         centerTitle: true,
         title: Text(
           'Discover',
@@ -67,6 +69,12 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
 
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text('Explore Now'),
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(

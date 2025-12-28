@@ -12,6 +12,9 @@ class Bit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //material app is a root app
-    return MaterialApp(debugShowCheckedModeBanner: false, home: BottomNavBar());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: InitialScreen(),
+    );
   }
 }

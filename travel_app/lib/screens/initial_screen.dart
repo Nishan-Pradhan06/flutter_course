@@ -11,12 +11,21 @@ class InitialScreen extends StatelessWidget {
         children: [
           Container(height: 500, width: double.maxFinite, color: Colors.red),
           ElevatedButton(
-            onPressed: () {
-              Navigator.of(
+            onPressed: () { 
+
+              //pushReplacement example 
+              //push  -->stack
+              //pop
+              Navigator.pushReplacement(
                 context,
-              ).push(MaterialPageRoute(builder: (context) => HomePage()));
+                MaterialPageRoute(
+                  builder: (context) {
+                    return HomePage();
+                  },
+                ),
+              );
             },
-            child: Text('data'), //replace with your widgetgi
+            child: Text('data'), //replace with your widg`etgi
           ),
         ],
       ),
