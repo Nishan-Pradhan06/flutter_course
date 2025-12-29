@@ -88,6 +88,7 @@ class _HomePageState extends State<HomePage> {
               ),
               CustomButton(
                 text: 'NIshan',
+                style: TextStyle(fontFamily: 'Merriweather'),
                 onPressed: () {
                   Navigator.pop(context);
                 },

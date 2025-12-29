@@ -11,9 +11,8 @@ class InitialScreen extends StatelessWidget {
         children: [
           Container(height: 500, width: double.maxFinite, color: Colors.red),
           ElevatedButton(
-            onPressed: () { 
-
-              //pushReplacement example 
+            onPressed: () {
+              //pushReplacement example
               //push  -->stack
               //pop
               Navigator.pushReplacement(
@@ -25,7 +24,10 @@ class InitialScreen extends StatelessWidget {
                 ),
               );
             },
-            child: Text('data'), //replace with your widg`etgi
+            child: Text(
+              'data',
+              style: TextStyle(fontFamily: 'Merriweather'),
+            ), //replace with your widg`etgi
           ),
         ],
       ),
