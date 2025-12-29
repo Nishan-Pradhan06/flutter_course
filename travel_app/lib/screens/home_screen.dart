@@ -22,10 +22,19 @@ class _HomePageState extends State<HomePage> {
   // Variable to store number value
   // Used for displaying text multiple times
   int numer = 0;
+  final List<String> category = [
+    'All',
+    'Popular',
+    'Featured',
+    'New Arrivals',
+    'Recommended',
+  ];
 
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
+
+    //
     return Scaffold(
       //refernce web
       // header --> appbar
@@ -57,18 +66,21 @@ class _HomePageState extends State<HomePage> {
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             spacing: 10,
             children: [
-              Row(
-                spacing: 10,
-                children: [
-                  Text('Popular'),
-                  //for Spacing one is   ##sizebox and another is spacing provided in row widget
-                  Text('Featured'),
-                  // SizedBox(width: 10),
-                  Text('Most Visited'),
-                  Text('Europe'),
-                  Text('Asia'),
-                  Text('Popular'),
-                ],
+              SizedBox(
+                height: 200,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Text(
+                      'Popular',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.purple,
+                        fontSize: 18,
+                      ),
+                    );
+                  },
+                ),
               ),
 
               Text(height.toString()),
