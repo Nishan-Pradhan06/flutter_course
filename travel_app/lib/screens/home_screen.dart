@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:new_project/widgets/custom_indicator.dart';
 import 'package:new_project/widgets/custom_travel_card.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -46,6 +48,9 @@ class _HomePageState extends State<HomePage> {
     },
   ];
 
+  final PageController _pageController = PageController(viewportFraction: 0.85);
+  int currentPage = 0;
+
   @override
   Widget build(BuildContext context) {
     //
@@ -80,6 +85,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 20,
                 child: ListView.builder(
+                  padding: EdgeInsets.zero,
                   scrollDirection: Axis.horizontal,
                   itemCount: category.length,
                   itemBuilder: (context, index) {
@@ -91,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                         });
                       },
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
+                        padding: const EdgeInsets.only(left: 7.0),
                         child: Text(
                           category[index],
                           style: TextStyle(
@@ -111,12 +117,16 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(
                 height: 200,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
+                child: PageView.builder(
+                  padEnds: false,
+                  controller: _pageController,
                   itemCount: travelDetails.length,
+                  onPageChanged: (index) {
+                    setState(() => currentPage = index);
+                  },
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
+                      padding: const EdgeInsets.only(right: 10),
                       child: CustomTravelCard(
                         title: travelDetails[index]['title']!,
                         rating: travelDetails[index]['rating']!,
@@ -124,6 +134,16 @@ class _HomePageState extends State<HomePage> {
                       ),
                     );
                   },
+                ),
+              ),
+
+              SmoothPageIndicator(
+                controller: _pageController,
+                count: travelDetails.length,
+                effect: WormEffect(
+                  dotHeight: 8,
+                  dotWidth: 8,
+                  activeDotColor: Color(0xFF403A7A),
                 ),
               ),
             ],
