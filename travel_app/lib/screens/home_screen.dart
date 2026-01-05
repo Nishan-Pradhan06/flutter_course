@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_project/screens/product_des_screen.dart';
 import 'package:new_project/widgets/custom_travel_card.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -54,7 +55,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       //refernce web
       // header --> appbar
@@ -129,6 +129,13 @@ class _HomePageState extends State<HomePage> {
                     return Padding(
                       padding: const EdgeInsets.only(right: 10),
                       child: CustomTravelCard(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => ProductDesScreen(),
+                            ),
+                          );
+                        },
                         title: travelDetails[index]['title']!,
                         rating: travelDetails[index]['rating']!,
                         img: travelDetails[index]['img']!,
