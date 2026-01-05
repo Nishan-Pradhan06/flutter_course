@@ -28,46 +28,55 @@ class _HomePageState extends State<HomePage> {
       'rating': '4.5',
       'img':
           'https://media.istockphoto.com/id/904172104/photo/weve-made-it-all-this-way-i-am-proud.jpg?s=612x612&w=0&k=20&c=MewnsAhbeGRcMBN9_ZKhThmqPK6c8nCT8XYk5ZM_hdg=',
+      'desc':
+          'The Northern Hills offer breathtaking landscapes with rolling green mountains, peaceful trails, and fresh, crisp air. Visitors can enjoy hiking, photography, and exploring local villages while experiencing the serene natural environment. It is an ideal destination for those seeking adventure, relaxation, and an escape from city life.',
     },
     {
-      'title': 'Lakeside View ',
+      'title': 'Lakeside View',
       'rating': '4.8',
       'img':
           'https://t3.ftcdn.net/jpg/03/01/84/54/360_F_301845445_Aj4iICMuzOfFkKW0U43l4aFAo05HZxIZ.jpg',
+      'desc':
+          'Lakeside View is a serene destination featuring calm waters surrounded by lush greenery and majestic mountains. Perfect for boating, fishing, or peaceful reflection, it offers a relaxing retreat. Travelers can enjoy picnics, sunrise views, and capturing stunning photographs, making it an unforgettable and peaceful experience in nature.',
     },
     {
       'title': 'Mountain Escape',
       'rating': '4.3',
       'img':
           'https://assets.bucketlistly.blog/sites/5adf778b6eabcc00190b75b1/content_entry5b155bed5711a8176e9f9783/5c4fbe2246025317508def41/files/nepal-everest-base-camp-everest-travel-photo-20190128094442660-main-image.jpg',
+      'desc':
+          'Mountain Escape is perfect for adventure seekers who love trekking, climbing, and breathtaking panoramic views. Towering peaks, challenging trails, and fresh mountain air provide an exhilarating experience. Visitors can explore local villages, wildlife, and enjoy camping under the stars, making it an unforgettable journey into the heart of nature and adventure.',
     },
     {
       'title': 'Desert Adventure',
       'rating': '4.6',
       'img': 'https://www.bsr.org/images/heroes/bsr-travel-hero..jpg',
-    },
-    {
-      'title': 'Desert Adventure',
-      'rating': '4.6',
-      'img': 'https://www.bsr.org/images/heroes/bsr-travel-hero..jpg',
+      'desc':
+          'Desert Adventure takes you across endless golden sands with rolling dunes and dramatic landscapes. Visitors can enjoy camel rides, sunset views, stargazing, and photography. The unique environment offers a chance to experience silence, adventure, and the beauty of nature in its raw form. It is ideal for thrill seekers and explorers.',
     },
     {
       'title': 'Tropical Paradise',
       'rating': '4.7',
       'img':
           'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60',
+      'desc':
+          'Tropical Paradise is a lush, vibrant destination filled with exotic plants, sandy beaches, and crystal-clear waters. Visitors can relax in hammocks, swim, snorkel, or explore hidden trails. The warm climate, colorful wildlife, and serene environment make it an ideal spot for relaxation, photography, and reconnecting with nature.',
     },
     {
       'title': 'City Lights',
       'rating': '4.4',
       'img':
           'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=60',
+      'desc':
+          'City Lights offers a lively urban experience with sparkling skyscrapers, vibrant nightlife, and cultural attractions. Visitors can enjoy shopping, dining, entertainment, and city tours. The blend of modern architecture and historic sites provides a unique experience. It is perfect for travelers seeking excitement, adventure, and memorable cityscapes.',
     },
     {
       'title': 'Forest Retreat',
       'rating': '4.9',
       'img':
           'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=60',
+      'desc':
+          'Forest Retreat is a peaceful sanctuary surrounded by dense woodlands, wildlife, and natural streams. Visitors can hike, camp, or simply relax amid the calming sounds of nature. Perfect for meditation, photography, and reconnecting with the environment, this retreat provides a refreshing escape from the hustle of city life and everyday stress.',
     },
   ];
 
@@ -156,7 +165,12 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => ProductDesScreen(),
+                              builder: (context) => ProductDesScreen(
+                                title: travelDetails[index]['title']!,
+                                rating: travelDetails[index]['rating']!,
+                                img: travelDetails[index]['img']!,
+                                desc: travelDetails[index]["desc"]!,
+                              ),
                             ),
                           );
                         },
@@ -209,6 +223,18 @@ class _HomePageState extends State<HomePage> {
                       height: 180,
                       width: 175,
                       isGrid: true,
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => ProductDesScreen(
+                              title: travelDetails[index]['title']!,
+                              rating: travelDetails[index]['rating']!,
+                              img: travelDetails[index]['img']!,
+                              desc: travelDetails[index]["desc"]!,
+                            ),
+                          ),
+                        );
+                      },
                     );
                   },
                 ),
