@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/widgets/custom_indicator.dart';
 import 'package:new_project/widgets/custom_travel_card.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -51,9 +50,11 @@ class _HomePageState extends State<HomePage> {
   final PageController _pageController = PageController(viewportFraction: 0.85);
   int currentPage = 0;
 
+  final bool screenWidth = true;
+
   @override
   Widget build(BuildContext context) {
-    //
+
     return Scaffold(
       //refernce web
       // header --> appbar
@@ -144,6 +145,38 @@ class _HomePageState extends State<HomePage> {
                   dotHeight: 8,
                   dotWidth: 8,
                   activeDotColor: Color(0xFF403A7A),
+                ),
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Recommended',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
+                  Text('View All'),
+                ],
+              ),
+              SizedBox(
+                height: 600,
+                width: MediaQuery.of(context).size.width,
+                child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, //declear items to show
+                    crossAxisSpacing: 10, //give gap between horizontal
+                    mainAxisSpacing: 10, //give between vertical
+                  ),
+                  itemCount: travelDetails.length,
+                  itemBuilder: (context, index) {
+                    return CustomTravelCard(
+                      title: travelDetails[index]['title']!,
+                      rating: travelDetails[index]['rating']!,
+                      img: travelDetails[index]['img']!,
+                      height: 180,
+                      width: 175,
+                    );
+                  },
                 ),
               ),
             ],

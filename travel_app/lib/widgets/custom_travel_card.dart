@@ -4,18 +4,22 @@ class CustomTravelCard extends StatelessWidget {
   final String title;
   final String rating;
   final String img;
+  final double? height;
+  final double? width;
   const CustomTravelCard({
     super.key,
     required this.title,
     required this.rating,
     required this.img,
+    this.height = 200,
+    this.width = 300,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
-      width: 300,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
         image: DecorationImage(image: NetworkImage(img), fit: BoxFit.cover),
         color: Colors.red,
@@ -45,7 +49,7 @@ class CustomTravelCard extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 24,
+                        fontSize: 20,
                       ),
                     ),
 
