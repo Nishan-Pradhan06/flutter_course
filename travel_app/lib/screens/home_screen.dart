@@ -46,6 +46,29 @@ class _HomePageState extends State<HomePage> {
       'rating': '4.6',
       'img': 'https://www.bsr.org/images/heroes/bsr-travel-hero..jpg',
     },
+    {
+      'title': 'Desert Adventure',
+      'rating': '4.6',
+      'img': 'https://www.bsr.org/images/heroes/bsr-travel-hero..jpg',
+    },
+    {
+      'title': 'Tropical Paradise',
+      'rating': '4.7',
+      'img':
+          'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60',
+    },
+    {
+      'title': 'City Lights',
+      'rating': '4.4',
+      'img':
+          'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=60',
+    },
+    {
+      'title': 'Forest Retreat',
+      'rating': '4.9',
+      'img':
+          'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=60',
+    },
   ];
 
   final PageController _pageController = PageController(viewportFraction: 0.85);
@@ -129,6 +152,7 @@ class _HomePageState extends State<HomePage> {
                     return Padding(
                       padding: const EdgeInsets.only(right: 10),
                       child: CustomTravelCard(
+                        isGrid: false,
                         onTap: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
@@ -160,19 +184,21 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     'Recommended',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                   Text('View All'),
                 ],
               ),
               SizedBox(
-                height: 600,
                 width: MediaQuery.of(context).size.width,
                 child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2, //declear items to show
                     crossAxisSpacing: 10, //give gap between horizontal
                     mainAxisSpacing: 10, //give between vertical
+                    childAspectRatio: 175 / 180,
                   ),
                   itemCount: travelDetails.length,
                   itemBuilder: (context, index) {
@@ -182,6 +208,7 @@ class _HomePageState extends State<HomePage> {
                       img: travelDetails[index]['img']!,
                       height: 180,
                       width: 175,
+                      isGrid: true,
                     );
                   },
                 ),

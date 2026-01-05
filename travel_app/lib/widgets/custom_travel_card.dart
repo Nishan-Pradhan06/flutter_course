@@ -7,6 +7,7 @@ class CustomTravelCard extends StatelessWidget {
   final double? height;
   final double? width;
   final void Function()? onTap;
+  final bool isGrid;
   const CustomTravelCard({
     super.key,
     required this.title,
@@ -15,6 +16,7 @@ class CustomTravelCard extends StatelessWidget {
     this.height = 200,
     this.width = 300,
     this.onTap,
+    required this.isGrid,
   });
 
   @override
@@ -32,20 +34,17 @@ class CustomTravelCard extends StatelessWidget {
         child: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: 80,
+            height: isGrid ? 50 : 70,
             width: double.infinity,
             decoration: BoxDecoration(
-              color: Colors.black.withValues(alpha: 0.3),
-              borderRadius: BorderRadius.circular(20),
+              color: Colors.black.withValues(alpha: 0.5),
+              borderRadius: BorderRadius.circular(isGrid ? 16 : 20),
             ),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 8,
-                    horizontal: 20,
-                  ),
-                  child: Row(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              child: Column(
+                children: [
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
@@ -53,13 +52,13 @@ class CustomTravelCard extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: isGrid ? 16 : 24,
                         ),
                       ),
 
                       Container(
-                        width: 25,
-                        height: 25,
+                        width: isGrid ? 15 : 25,
+                        height: isGrid ? 15 : 25,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
@@ -67,34 +66,35 @@ class CustomTravelCard extends StatelessWidget {
                         child: Icon(
                           Icons.favorite,
                           color: Colors.red,
-                          size: 16,
+                          size: isGrid ? 10 : 16,
                         ),
                       ),
                     ],
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Row(
+                  Row(
                     children: [
-                      Icon(Icons.star, color: Colors.yellow, size: 16),
-                      Icon(Icons.star, color: Colors.yellow, size: 16),
-                      Icon(Icons.star, color: Colors.yellow, size: 16),
-                      Icon(Icons.star, color: Colors.yellow, size: 16),
-                      Icon(Icons.star, color: Colors.yellow, size: 16),
-                      SizedBox(width: 8),
+                      for (int i = 1; i <= 5; i++)
+                        Icon(
+                          i <= double.parse(rating)
+                              ? Icons.star
+                              : Icons.star_border,
+                          color: Colors.yellow,
+                          size: isGrid ? 10 : 16,
+                        ),
+
+                      const SizedBox(width: 8),
                       Text(
                         rating,
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: isGrid ? 14 : 18,
                         ),
                       ),
                     ],
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
