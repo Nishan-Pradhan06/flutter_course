@@ -232,7 +232,7 @@ class _HomePageState extends State<HomePage> {
                               img: travelDetails[index]['img']!,
                               desc: travelDetails[index]["desc"]!,
                             ),
-                          ),
+                          ),   
                         );
                       },
                     );
