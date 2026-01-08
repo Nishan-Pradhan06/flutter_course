@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_project/widgets/custom_button.dart';
 
-class ProductDesScreen extends StatelessWidget {
+class ProductDesScreen extends StatefulWidget {
   final String title;
   final String img;
   final String rating;
@@ -13,6 +13,29 @@ class ProductDesScreen extends StatelessWidget {
     required this.img,
     required this.desc,
   });
+
+  @override
+  State<ProductDesScreen> createState() => _ProductDesScreenState();
+}
+
+class _ProductDesScreenState extends State<ProductDesScreen> {
+  int package = 400;
+  int productItem = 1;
+  void onRemove() {
+    setState(() {
+      if (productItem > 0) {
+        productItem--;
+        package = productItem * package;
+      }
+    });
+  }
+
+  void onAdd() {
+    setState(() {
+      productItem++;
+      package = productItem * package;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +52,7 @@ class ProductDesScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.red,
                 image: DecorationImage(
-                  image: NetworkImage(img),
+                  image: NetworkImage(widget.img),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -53,7 +76,7 @@ class ProductDesScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
+                    widget.title,
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                   Row(
@@ -70,7 +93,7 @@ class ProductDesScreen extends StatelessWidget {
                     children: [
                       for (int i = 1; i <= 5; i++)
                         Icon(
-                          i <= double.parse(rating)
+                          i <= double.parse(widget.rating)
                               ? Icons.star
                               : Icons.star_border,
                           color: Color(0xFFF4D150),
@@ -79,7 +102,7 @@ class ProductDesScreen extends StatelessWidget {
 
                       const SizedBox(width: 8),
                       Text(
-                        rating,
+                        widget.rating,
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
@@ -89,6 +112,8 @@ class ProductDesScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 30),
+
+                  
                   Row(
                     children: [
                       // Minus button
@@ -100,9 +125,7 @@ class ProductDesScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: IconButton(
-                          onPressed: () {
-                            // Decrement logic
-                          },
+                          onPressed: onRemove,
                           icon: Icon(
                             Icons.remove,
                             color: Colors.white,
@@ -121,7 +144,7 @@ class ProductDesScreen extends StatelessWidget {
                           vertical: 8,
                         ),
                         child: Text(
-                          '5',
+                          productItem.toString(),
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
@@ -141,9 +164,7 @@ class ProductDesScreen extends StatelessWidget {
                           color: Color(0xFF7C6FFF),
                         ),
                         child: IconButton(
-                          onPressed: () {
-                            // Increment logic
-                          },
+                          onPressed: onAdd,
                           icon: Icon(Icons.add, color: Colors.white, size: 24),
                           padding: EdgeInsets.zero,
                         ),
@@ -164,7 +185,7 @@ class ProductDesScreen extends StatelessWidget {
                     "Description",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  Text(desc, style: TextStyle(fontSize: 16)),
+                  Text(widget.desc, style: TextStyle(fontSize: 16)),
                   SizedBox(height: 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -172,7 +193,7 @@ class ProductDesScreen extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            "\$400",
+                            "\$${package.toString()}",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 35,
