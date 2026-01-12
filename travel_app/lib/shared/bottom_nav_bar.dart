@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_project/screens/home_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -10,7 +11,7 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int selectedIndex = 0;
   final List<Widget> pages = [
-    Container(color: Colors.redAccent),
+    HomePage(),
     Container(color: Colors.greenAccent),
     Container(color: Colors.blueAccent),
     Container(color: Colors.yellowAccent),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/screens/initial_screen.dart';
+import 'package:new_project/screens/login_screen.dart';
 
 void main() {
   runApp(Bit());
@@ -14,7 +14,7 @@ class Bit extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Merriweather'),
-      home: InitialScreen(),
+      home: LoginScreen(),
     );
   }
 }

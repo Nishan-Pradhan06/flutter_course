@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/screens/home_screen.dart';
+import 'package:new_project/shared/bottom_nav_bar.dart';
 import 'package:new_project/widgets/custom_button.dart';
 
 class InitialScreen extends StatelessWidget {
@@ -55,9 +55,9 @@ class InitialScreen extends StatelessWidget {
                   suffix: Image.asset('assets/arrow.png', width: 30),
                   padding: EdgeInsets.symmetric(horizontal: 30),
                   onPressed: () {
-                    Navigator.of(
-                      context,
-                    ).push(MaterialPageRoute(builder: (context) => HomePage()));
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => BottomNavBar()),
+                    );
                   },
                 ),
               ],
