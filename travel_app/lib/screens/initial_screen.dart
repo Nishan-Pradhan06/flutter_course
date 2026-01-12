@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:new_project/router/app_router.dart';
 import 'package:new_project/shared/bottom_nav_bar.dart';
 import 'package:new_project/widgets/custom_button.dart';
+
+import '../router/routes_name.dart';
 
 class InitialScreen extends StatelessWidget {
   const InitialScreen({super.key});
@@ -55,9 +59,7 @@ class InitialScreen extends StatelessWidget {
                   suffix: Image.asset('assets/arrow.png', width: 30),
                   padding: EdgeInsets.symmetric(horizontal: 30),
                   onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => BottomNavBar()),
-                    );
+                    context.pushNamed(RouteNames.bottomNavBar);
                   },
                 ),
               ],

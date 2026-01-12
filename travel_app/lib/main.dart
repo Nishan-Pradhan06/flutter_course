@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_project/screens/login_screen.dart';
+import 'router/routes.dart';
 
 void main() {
   runApp(Bit());
@@ -11,10 +11,10 @@ class Bit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //material app is a root app
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Merriweather'),
-      home: LoginScreen(),
+      routerConfig: router,
     );
   }
 }
