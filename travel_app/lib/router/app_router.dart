@@ -8,22 +8,27 @@ import 'routes_name.dart';
 List<GoRoute> userAppRoutes = [
   GoRoute(
     path: RouteNames.loginScreen,
-    name: 'login',
+    name: '/login',
     builder: (context, state) => const LoginScreen(),
   ),
   GoRoute(
     path: RouteNames.initialScreen,
-    name: 'initial',
+    name: '/initial',
     builder: (context, state) => const InitialScreen(),
   ),
   GoRoute(
     path: RouteNames.bottomNavBar,
-    name: 'bottomNavBar',
+    name: '/bottomNavBar',
     builder: (context, state) => const BottomNavBar(),
   ),
   GoRoute(
     path: RouteNames.homeScreen,
-    name: 'home',
+    name: '/home',
+    builder: (context, state) => const HomePage(),
+  ),
+  GoRoute(
+    path: RouteNames.productDescScreen,
+    name: '/home',
     builder: (context, state) => const HomePage(),
   ),
 ];

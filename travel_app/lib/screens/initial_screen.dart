@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:new_project/router/app_router.dart';
-import 'package:new_project/shared/bottom_nav_bar.dart';
 import 'package:new_project/widgets/custom_button.dart';
 
 import '../router/routes_name.dart';
